@@ -1,0 +1,90 @@
+<div style="width: 800px;float: left">
+<ul class="tabs"><li class="tabs__tab"><a routerLink="/main" class="tabs__tab-link">简单搜索</a></li>
+  <li class="tabs__tab is-active"><a routerLink="/adsearch" class="tabs__tab-link is-active active">高级搜索 <span class="visually-hidden">(active tab)</span></a></li>
+</ul>
+<form action="/books/advquery" method="GET" id="ecust-lib-form-book-adv-query" accept-charset="UTF-8"><div>
+  <div class="form-item form-type-textfield form-item-title">
+    <label for="edit-title">标题 </label>
+    <input  [(ngModel)]= this.name placeholder="请输入..." type="text" id="edit-title" name="title" value="" size="60" maxlength="128" class="form-text">
+  </div>
+  <div class="form-item form-type-textfield form-item-author">
+    <label for="edit-author">作者 </label>
+    <input [(ngModel)]= this.author placeholder="请输入..." type="text" id="edit-author" name="author" value="" size="60" maxlength="128" class="form-text">
+  </div>
+  <div class="form-item form-type-textfield form-item-publish">
+    <label for="edit-publish">出版社 </label>
+    <input [(ngModel)]= this.publisher placeholder="请输入..." type="text" id="edit-publish" name="publish" value="" size="60" maxlength="128" class="form-text">
+  </div>
+  <div class="form-item form-type-textfield form-item-isbn">
+    <label for="edit-isbn">ISBN </label>
+    <input [(ngModel)]= this.isbn placeholder="请输入..." type="text" id="edit-isbn" name="isbn" value="" size="60" maxlength="128" class="form-text">
+  </div>
+  <div class="form-item form-type-textfield form-item-callNo">
+    <label for="edit-callno">索书号 </label>
+    <input [(ngModel)]= this.callno placeholder="请输入..." type="text" id="edit-callno" name="callNo" value="" size="60" maxlength="128" class="form-text">
+  </div>
+  <input type="hidden" name="form_build_id" value="form-XlogAycmBTIW_3RR7dvGEDdAUVUxRl2jjYVsxLQ5CXI">
+  <input type="hidden" name="form_id" value="ecust_lib_form_book_adv_query">
+  <div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="搜索" class="form-submit" (click)="adsearch()"></div></div></form>
+<div *ngFor="let type of this.sptypes;index as i" >
+  <div  class="book-item">
+  <div class="title">
+    <div style="width: 100px;height: 10px">
+    </div>
+    <a  routerLink="/typedetail/{{type.isbn}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{type.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    <span class="bookId">
+   					<label><b>索书号：</b></label>
+        <span><b>	{{type.callno}}</b></span>
+   				</span>
+  </div>
+  <ul class="author">
+    <li>
+      <label>著者：</label>
+      <span>{{type.author}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </li>
+    <li>
+      <label>出版日期：</label>
+      <span>{{type.publishtime}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </li>
+    <li>
+      <label>出版社：</label>
+      <span>{{type.publisher}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </li>
+    <li class="r">
+      <label>可借复本：</label>
+      <span>{{information.ano[i]}}&nbsp;&nbsp;&nbsp;</span>
+    </li>
+    <li class="r">
+      <label>馆藏复本：</label>
+      <span>{{type.inno}}</span>
+    </li>
+  </ul>
+  </div>
+</div>
+</div>
+<div style="float: left;width: 200px;border: 2px solid #6aa3cc;">
+  <div *ngIf="tclicked === false">
+  <h3>文献类型</h3>
+  <div *ngFor="let booktype of this.information.catt| keyvalue">
+  <a (click)="filter('t',booktype.key)">{{booktype.key}}({{booktype.value}})</a>
+  </div>
+  </div>
+  <div *ngIf="aclicked === false">
+    <h3>作者</h3>
+    <div *ngFor="let booktype of this.information.cata| keyvalue">
+      <a (click)="filter('a',booktype.key)">{{booktype.key}}({{booktype.value}})</a>
+    </div>
+  </div>
+  <div *ngIf="dclicked === false">
+    <h3>出版时间</h3>
+    <div *ngFor="let booktype of this.information.catd| keyvalue">
+      <a (click)="filter('d',booktype.key)">{{booktype.key}}({{booktype.value}})</a>
+    </div>
+  </div>
+  <div *ngIf="lclicked === false">
+    <h3>语言</h3>
+    <div *ngFor="let booktype of this.information.catl| keyvalue">
+      <a (click)="filter('l',booktype.key)">{{booktype.key}}({{booktype.value}})</a>
+    </div>
+  </div>
+</div>

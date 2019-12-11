@@ -1,0 +1,127 @@
+div {
+  display: block;
+}
+ul {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+ul, ol {
+  list-style: none;
+}
+li {
+  display: inline;
+  text-align: -webkit-match-parent;
+}
+a {
+  color: #0e6aad;
+  text-decoration: none;
+}
+select, input, textarea {
+  font-size: 14px;
+  margin: 0;
+}
+label {
+  font-weight: normal;
+  cursor: default;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+.visually-hidden{
+  display: none !important;
+}
+.layout-3col__full{
+  box-sizing: border-box;
+}
+.tabs{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.tabs li.is-active a {
+  background: #fff;
+  padding: 9px 15px;
+  color: #0e6aad;
+  border: 2px solid #6aa3cc;
+  border-bottom: 0;
+}
+.tabs li a {
+  float: left;
+  background: #0e6aad;
+  color: #fff;
+  padding: 10px 15px;
+  line-height: 1;
+  margin-right: 3px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.content{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.book-item{
+  border: 2px solid #0e6aad;
+}
+#ecust-lib-form-book-query {
+  border: 2px solid #6aa3cc;
+  border-radius: 5px;
+  padding: 20px 15px;
+  margin-bottom: 30px;
+  background: #efefef;
+  clear: both;
+}
+#ecust-lib-form-book-query .form-item {
+  float: left;
+  margin-right: 10px;
+}
+#ecust-lib-form-book-query .form-item select {
+  height: 26px;
+  line-height: 26px;
+}
+#ecust-lib-form-book-query .form-item label {
+  height: 26px;
+  line-height: 26px;
+  display: none;
+}
+#ecust-lib-form-book-query .form-item input {
+  background: #fff;
+  height: 26px;
+  line-height: 26px;
+  padding-left: 5px;
+}
+#ecust-lib-form-book-query .form-submit {
+  background: #0e6aad;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 5px;
+}
+#ecust-lib-form-book-query .item-list {
+  clear: both;
+  padding: 10px 0 0;
+}
+#ecust-lib-form-book-query .item-list li {
+  display: inline;
+  margin: 0 10px 0 0;
+}
+#ecust-lib-form-book-query .item-list li a {
+  text-decoration: underline;
+}

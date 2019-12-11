@@ -1,0 +1,79 @@
+
+<main id="main" class="layout-3col__full" role="main">
+  <ul class="tabs">
+    <li class="tabs__tab is-active"><a href="simpleSearch.html" class="tabs__tab-link is-active active">简单搜索<span class="visually-hidden">(active tab)</span></a></li>
+    <li class="tabs__tab"><a routerLink="/adsearch" class="tabs__tab-link">高级搜索</a></li>
+  </ul>
+
+  <div id="content">
+    <form id="ecust-lib-form-book-query" accept-charset="UTF-8">
+      <div>
+        <div class="form-item form-type-select form-item-field">
+          <select id="edit-field" name="field" class="form-select required" (change)="optionchange()">
+            <option value="name">标题</option>
+            <option value="author">作者</option>
+            <option value="publish">出版社</option>
+            <option value="callNo">索书号</option>
+            <option value="isbn">ISBN</option>
+          </select>
+        </div>
+
+        <div class="form-item form-type-textfield form-item-key">
+          <input [(ngModel)]= this.searchcontent placeholder="请输入..." type="text" id="edit-key" name="key" value="" size="60" maxlength="128" class="form-text required">
+        </div>
+
+
+        <div class="form-actions form-wrapper" id="edit-actions">
+          <input type="submit" id="edit-submit" name="op" value="搜索" class="form-submit" (click)="search(searchoption,searchcontent)">
+        </div>
+        <div class="item-list">
+          <h3>热门搜索</h3>
+          <div *ngIf="this.hots!==undefined">
+          <ul>
+            <li><a (click)="search('name',this.hots[0])" >{{this.hots[0]}}</a></li>
+            <li><a (click)="search('name',this.hots[1])" >{{this.hots[1]}}</a></li>
+            <li><a (click)="search('name',this.hots[2])" >{{this.hots[2]}}</a></li>
+            <li><a (click)="search('name',this.hots[3])" >{{this.hots[3]}}</a></li>
+            <li class="last"><a (click)="search('name',this.hots[4])" >{{this.hots[4]}}</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div *ngFor="let type of types;index as i" class="book-item">
+    <div class="title">
+      <div style="width: 100px;height: 10px">
+      </div>
+      <a  routerLink="/typedetail/{{type.isbn}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{type.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <span class="bookId">
+   					<label><b>索书号：</b></label>
+        <span><b>	{{type.callno}}</b></span>
+   				</span>
+    </div>
+    <ul class="author">
+      <li>
+        <label>著者：</label>
+        <span>{{type.author}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </li>
+      <li>
+        <label>出版日期：</label>
+        <span>{{type.publishtime}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </li>
+      <li>
+        <label>出版社：</label>
+        <span>{{type.publisher}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </li>
+      <li class="r">
+        <label>可借复本：</label>
+        <span>{{information.ano[i]}}&nbsp;&nbsp;&nbsp;</span>
+      </li>
+      <li class="r">
+        <label>馆藏复本：</label>
+        <span>{{type.inno}}</span>
+      </li>
+    </ul>
+  </div>
+</main>
+
