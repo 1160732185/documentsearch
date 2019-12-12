@@ -1,48 +1,18 @@
-body {
-  color: #353535;
-  font-size: 14px;
-  font-family: 'Microsoft Yahei',Helvetica,Arial,'Lucida Grande',sans-serif;
-}
 div {
   display: block;
 }
-ul {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+th {
+  white-space: nowrap;
+  min-width: 70px;
+  font-style: normal;
+  font-weight: normal;
+  display: table-cell;
+  vertical-align: inherit;
 }
-ul, ol {
-  list-style: none;
-}
-li {
-  display: inline;
-  text-align: -webkit-match-parent;
-}
-a {
-  color: #0e6aad;
-  text-decoration: none;
-}
-select, input, textarea {
+.book-detail{
+  color: #353535;
   font-size: 14px;
-  margin: 0;
-}
-label {
-  font-weight: normal;
-  cursor: default;
-}
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
-option {
-  font-weight: normal;
-  display: block;
-  white-space: pre;
-  min-height: 1.2em;
-  padding: 0px 2px 1px;
+  font-family: 'Microsoft Yahei',Helvetica,Arial,'Lucida Grande',sans-serif;
 }
 .visually-hidden{
   display: none !important;
@@ -55,6 +25,13 @@ option {
 .book-detail .right .title {
   border-bottom: 2px solid #0e6aad;
   margin-bottom: 15px;
+}
+.book-detail .right .title h2 {
+  font-size: 20px;
+  color: #0e6aad;
+  font-weight: normal;
+  display: inline-block;
+  margin-right: 20px;
 }
 .book-detail .right .title .sqh {
   display: inline-block;
@@ -73,4 +50,41 @@ option {
 .qr-code-item{
   margin-left:5px;
   font-size: 10px;
+}
+.book-detail .right .top {
+  border-bottom: 1px solid #0e6aad;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+.book-detail .right .bottom{
+  border-bottom: 1px solid #0e6aad;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+.book-detail .right h2 {
+  font-size: 14px;
+  margin-bottom: 13px;
+  font-weight: bold;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+.book-detail .right table th {
+  background: #33CCFF;
+  text-align: center;
+  padding: 3px;
+  border: 1px solid #33CCCC;
+}
+.book-detail .right table td {
+  padding: 0 3px;
+  border: 1px solid #33CCCC;
+  text-align: center;
+  line-height: 1.6;
 }

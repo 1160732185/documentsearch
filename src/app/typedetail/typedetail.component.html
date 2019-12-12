@@ -19,7 +19,7 @@
         </div>
         <div class="item">
           <label>出版时间</label>
-          <span> &nbsp;&nbsp;{{this.type.publishtime}}</span>
+          <span>{{this.type.publishtime}}</span>
         </div>
         <div class="item">
           <label>文献语言</label>
@@ -33,23 +33,23 @@
           <label>在馆情况</label>
           <span>{{information.ano[0]}}</span>
         </div>
-        <div class="bottom">
-          <h2>馆藏地址</h2>
-          <div class="mobile-table"><table class="sticky-header" style="position: fixed; top: 0px; left: 5px; visibility: hidden;"><thead style=""><tr><th>条形码</th><th>目前状态</th><th>卷册号</th><th>馆藏地址</th><th>发送到手机</th> </tr></thead></table><table class="sticky-enabled tableheader-processed sticky-table">
-            <thead><tr><th>条形码</th><th>目前状态</th><th>馆藏地址</th></tr></thead>
-            <tbody>
-            <tr *ngFor="let book of this.information.books" class="odd"><td>{{book.bar}}</td><td>{{book.state}}</td><td>{{book.location}}</td> </tr>
-            </tbody>
-          </table></div>
+      </div>
+      <div class="bottom">
+        <h2>馆藏地址</h2>
+        <div class="mobile-table"><table class="sticky-header" style="position: fixed; top: 0px; left: 5px; visibility: hidden;"><thead style=""><tr><th>条形码</th><th>目前状态</th><th>卷册号</th><th>馆藏地址</th><th>发送到手机</th> </tr></thead></table><table class="sticky-enabled tableheader-processed sticky-table">
+          <thead><tr><th>条形码</th><th>目前状态</th><th>馆藏地址</th></tr></thead>
+          <tbody>
+          <tr *ngFor="let book of this.information.books" class="odd"><td>{{book.bar}}</td><td>{{book.state}}</td><td>{{book.location}}</td> </tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div>
+        <h2>书评</h2>
+        <div *ngFor="let com of this.comments">
+          {{com}}
         </div>
-        <div>
-          <h1>书评</h1>
-          <div *ngFor="let com of this.comments">
-            {{com}}
-          </div>
-          <input [(ngModel)]= this.comment placeholder="请输入你的评论..." type="text" id="edit-key" name="key" value="" size="60" maxlength="128" class="form-text required">
-          <input type="submit" id="edit-submit" name="op" value="评论" class="form-submit" (click)="addcomment()">
-        </div>
+        <input [(ngModel)]= this.comment placeholder="请输入你的评论..." type="text" id="edit-key" name="key" value="" size="60" maxlength="128" class="form-text required">
+        <input type="submit" id="edit-submit" name="op" value="评论" class="form-submit" (click)="addcomment()">
       </div>
     </div>
   </div>
