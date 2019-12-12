@@ -4,7 +4,6 @@ import { Location } from '@angular/common';
 import {ActionService} from '../../action.service';
 import {Type} from '../../Type';
 import {Information} from '../../Information';
-import {QRCodeComponent} from 'ng2-qrcode';
 @Component({
   selector: 'app-typedetail',
   templateUrl: './typedetail.component.html',
@@ -17,6 +16,8 @@ export class TypedetailComponent implements OnInit {
               private location: Location) { }
   type: Type;
   information: Information;
+  comment: string;
+  comments: string[];
   ngOnInit(): void {
     this.type = new Type();
     const id = this.route.snapshot.paramMap.get('id');
@@ -27,8 +28,17 @@ export class TypedetailComponent implements OnInit {
         this.type = data.types[0];
       }
     );
+    this.actionService.scomment(id).subscribe(
+      (data) => {
+        this.comments = data;
+        console.log('评论' + this.comments);
+      }
+    );
   }
-
-
-
+  addcomment() {
+    console.log(this.comment);
+    this.actionService.addcomment(this.comment, this.type.isbn).subscribe((data)=>{
+      console.log(data);
+    });
+  }
 }

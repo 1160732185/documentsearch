@@ -47,4 +47,15 @@ export class ActionService {
       'Access-Control-Allow-Origin': '*'
     });
   }
+
+  addcomment(comment: string, isbn: string): Observable<HttpResponse<string>> {
+    const url = `${this.doactionUrl}/addcomment`;
+    return this.http.post<string>(url, null,
+      {headers: this.header, observe: 'response', params: {comment, isbn}});
+  }
+
+  scomment(id: string): Observable<string[]>  {
+    const url = `${this.doactionUrl}/comment/${id}`;
+    return this.http.get<string[]>(url);
+  }
 }

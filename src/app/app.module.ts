@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { TypedetailComponent } from './typedetail/typedetail.component';
 import { AdsearchComponent } from './adsearch/adsearch.component';
+import {QRCodeModule} from 'angular2-qrcode';
 
 
 
@@ -25,6 +26,7 @@ import { AdsearchComponent } from './adsearch/adsearch.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
