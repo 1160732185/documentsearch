@@ -1,20 +1,22 @@
+input[type="text"], input[type="password"], textarea {
+  outline-style: none;
+  -webkit-appearance: none;
+}
+input {
+  border: 1px solid #0e6aad;
+  padding: 0;
+}
 div {
   display: block;
 }
 ul {
   display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+
+  margin: 0;
+  padding: 0;
 }
 ul, ol {
   list-style: none;
-}
-li {
-  display: inline;
-  text-align: -webkit-match-parent;
 }
 a {
   color: #0e6aad;
@@ -44,12 +46,16 @@ option {
 }
 .layout-3col__full{
   box-sizing: border-box;
+  line-height: 1.6;
+  color: #353535;
+  font-size: 14px;
+  font-family: 'Microsoft Yahei',Helvetica,Arial,'Lucida Grande',sans-serif;
 }
 .tabs{
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
+  margin-left: 50px;
+  bottom: -2px;
+  position: relative;
+  z-index: 5;
 }
 .tabs li.is-active a {
   background: #fff;
@@ -124,4 +130,29 @@ option {
 }
 #ecust-lib-form-book-query .item-list li a {
   text-decoration: underline;
+  cursor: pointer;
+}
+.right .ebook-item, .right .book-item {
+  border: 1px solid #6ca4cd;
+  padding: 15px 10px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+  box-shadow: 1px 1px 3px #ccc;
+  margin-bottom: 15px;
+}
+.right .book-item .title a {
+  text-decoration: underline;
+  margin-right: 20px;
+  font-size: 16px;
+}
+.right .ebook-item .title, .right .book-item .title {
+  margin-bottom: 2px;
+}
+.right .ebook-item .author li, .right .book-item .author li {
+  box-sizing: border-box;
+  display: inline;
+  margin: 0 10px 0 0;
+}
+.right .ebook-item .author .r, .right .book-item .author .r {
+  margin: 0 0 0 10px;
+  width: 90px;
 }

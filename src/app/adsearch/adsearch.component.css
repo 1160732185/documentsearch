@@ -12,6 +12,10 @@ ul {
 ul, ol {
   list-style: none;
 }
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, input, fieldset, legend, img {
+  margin: 0px;
+  padding: 0;
+}
 li {
   display: inline;
   text-align: -webkit-match-parent;
@@ -44,12 +48,15 @@ option {
 }
 .layout-3col__full{
   box-sizing: border-box;
+  color: #353535;
+  font-size: 14px;
+  font-family: 'Microsoft Yahei',Helvetica,Arial,'Lucida Grande',sans-serif;
 }
 .tabs{
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
+  margin-left: 50px;
+  bottom: -2px;
+  position: relative;
+  z-index: 5;
 }
 .tabs li.is-active a {
   background: #fff;
@@ -156,6 +163,7 @@ option {
   background: #0e6aad;
   color: #fff;
 }
+
 #ecust-lib-form-site-search .form-item input, #ecust-lib-form-book-adv-query .form-item input {
   border: 1px solid #d5d5d5;
   height: 25px;
@@ -164,4 +172,65 @@ option {
   background: #fff;
   border-radius: 2px;
   text-indent: 8px;
+}
+.left{
+  width: 203px;
+  float: left;
+  margin-right: 12px;
+}
+.right{
+  max-width: 745px;
+  width: 100%;
+  float: left;
+}
+.book-list{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.book-list .left .item-list h3 {
+  height: 31px;
+  line-height: 31px;
+  position: relative;
+  color: #fff;
+  background: #0e6aad;
+  font-size: 12px;
+  padding: 0 0 0 12px;
+  margin-bottom: 2px;
+}
+.book-list .left .item-list ul {
+  background: #dbecf7;
+  margin-bottom: 2px;
+  padding-top: 10px;
+  overflow: hidden;
+}
+.book-list .left .item-list ul li {
+  display: block;
+  padding: 0 0 10px 12px;
+  color: #0e6aad;
+  line-height: 1;
+}
+.book-list .right .ebook-item, .book-list .right .book-item {
+  border: 1px solid #6ca4cd;
+  padding: 15px 10px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+  box-shadow: 1px 1px 3px #ccc;
+  margin-bottom: 15px;
+}
+.book-list .right .book-item .title a {
+  text-decoration: underline;
+  margin-right: 20px;
+  font-size: 16px;
+}
+.book-list .right .ebook-item .title, .book-list .right .book-item .title {
+  margin-bottom: 2px;
+}
+.book-list .right .ebook-item .author li, .book-list .right .book-item .author li {
+  display: inline;
+  margin: 0 10px 0 0;
+}
+.book-list .right .ebook-item .author .r, .book-list .right .book-item .author .r {
+  margin: 0 0 0 10px;
+  width: 90px;
 }

@@ -1,49 +1,60 @@
-<div class="right" >
-  <div >
-    <h2>{{this.type.name}}</h2>
-    <div class="sqh">
-      <label>索取号</label>
-      <span>{{this.type.callno}}</span>
+<div class="book-detail">
+  <div class="right" >
+    <div class="title">
+      <h2>{{this.type.name}}</h2>
+      <div class="sqh">
+        <label>索取号</label>
+        <span>{{this.type.callno}}</span>
+      </div>
+    </div>
+    <div>
+      <div class="top">
+        <div class="item">
+          <label>作者</label>
+          <span>{{this.type.author}}</span>
+        </div>
+        <div class="item">
+          <label>出版社</label>
+          <span>{{this.type.publisher}}</span>
+        </div>
+        <div class="item">
+          <label>出版时间</label>
+          <span> &nbsp;&nbsp;{{this.type.publishtime}}</span>
+        </div>
+        <div class="item">
+          <label>文献语言</label>
+          <span>{{this.type.lang}}</span>
+        </div>
+        <div class="item">
+          <label>复本数</label>
+          <span>{{this.type.inno}}</span>
+        </div>
+        <div class="item">
+          <label>在馆情况</label>
+          <span>{{information.ano[0]}}</span>
+        </div>
+        <div class="bottom">
+          <h2>馆藏地址</h2>
+          <div class="mobile-table"><table class="sticky-header" style="position: fixed; top: 0px; left: 5px; visibility: hidden;"><thead style=""><tr><th>条形码</th><th>目前状态</th><th>卷册号</th><th>馆藏地址</th><th>发送到手机</th> </tr></thead></table><table class="sticky-enabled tableheader-processed sticky-table">
+            <thead><tr><th>条形码</th><th>目前状态</th><th>馆藏地址</th></tr></thead>
+            <tbody>
+            <tr *ngFor="let book of this.information.books" class="odd"><td>{{book.bar}}</td><td>{{book.state}}</td><td>{{book.location}}</td> </tr>
+            </tbody>
+          </table></div>
+        </div>
+        <div>
+          <h1>书评</h1>
+          <div *ngFor="let com of this.comments">
+            {{com}}
+          </div>
+          <input [(ngModel)]= this.comment placeholder="请输入你的评论..." type="text" id="edit-key" name="key" value="" size="60" maxlength="128" class="form-text required">
+          <input type="submit" id="edit-submit" name="op" value="评论" class="form-submit" (click)="addcomment()">
+        </div>
+      </div>
     </div>
   </div>
   <div>
-    <div class="top">
-      <div class="item">
-        <label>作者</label>
-        <span>{{this.type.author}}</span>
-      </div>
-      <div class="item">
-        <label>出版项</label>
-        <span>{{this.type.publisher}} &nbsp;&nbsp;{{this.type.publishtime}}</span>
-      </div>
-      <div class="item">
-        <label>文献语言</label>
-        <span>{{this.type.lang}}</span>
-      </div>
-      <div class="item">
-        <label>复本数</label>
-        <span>{{this.type.inno}}</span>
-      </div>
-      <div class="item">
-        <label>在馆情况</label>
-        <span>{{information.ano[0]}}</span>
-      </div>
-    <div class="bottom">
-      <h2>馆藏地址</h2>
-      <div class="mobile-table"><table class="sticky-header" style="position: fixed; top: 0px; left: 5px; visibility: hidden;"><thead style=""><tr><th>条形码</th><th>目前状态</th><th>卷册号</th><th>馆藏地址</th><th>发送到手机</th> </tr></thead></table><table class="sticky-enabled tableheader-processed sticky-table">
-        <thead><tr><th>条形码</th><th>目前状态</th><th>馆藏地址</th></tr></thead>
-        <tbody>
-        <tr *ngFor="let book of this.information.books" class="odd"><td>{{book.bar}}</td><td>{{book.state}}</td><td>{{book.location}}</td> </tr>
-        </tbody>
-      </table></div>
-    </div>
+    <qr-code [value]="this.type.isbn"></qr-code>
+    <div class="qr-code-item">扫码获取书籍信息</div>
   </div>
 </div>
-</div>
-<qr-code [value]="this.type.isbn"></qr-code>
-<h1>书评</h1>
-<div *ngFor="let com of this.comments">
-  {{com}}
-</div>
-<input [(ngModel)]= this.comment placeholder="请输入你的评论..." type="text" id="edit-key" name="key" value="" size="60" maxlength="128" class="form-text required">
-<input type="submit" id="edit-submit" name="op" value="评论" class="form-submit" (click)="addcomment()">

@@ -1,7 +1,7 @@
 
 <main id="main" class="layout-3col__full" role="main">
   <ul class="tabs">
-    <li class="tabs__tab is-active"><a href="simpleSearch.html" class="tabs__tab-link is-active active">简单搜索<span class="visually-hidden">(active tab)</span></a></li>
+    <li class="tabs__tab is-active"><a href="/main" class="tabs__tab-link is-active active">简单搜索<span class="visually-hidden">(active tab)</span></a></li>
     <li class="tabs__tab"><a routerLink="/adsearch" class="tabs__tab-link">高级搜索</a></li>
   </ul>
 
@@ -27,7 +27,6 @@
           <input type="submit" id="edit-submit" name="op" value="搜索" class="form-submit" (click)="search(searchoption,searchcontent)">
         </div>
         <div class="item-list">
-          <h3>热门搜索</h3>
           <div *ngIf="this.hots!==undefined">
           <ul>
             <li><a (click)="search('name',this.hots[0])" >{{this.hots[0]}}</a></li>
@@ -41,39 +40,41 @@
       </div>
     </form>
   </div>
+  <div class="left">
 
-  <div *ngFor="let type of types;index as i" class="book-item">
-    <div class="title">
-      <div style="width: 100px;height: 10px">
-      </div>
-      <a  routerLink="/typedetail/{{type.isbn}}"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{type.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-      <span class="bookId">
+  </div>
+  <div class="right">
+    <div *ngFor="let type of types;index as i" class="book-item">
+      <div class="title">
+        <a  routerLink="/typedetail/{{type.isbn}}">{{type.name}}</a>
+        <span class="bookId">
    					<label><b>索书号：</b></label>
         <span><b>	{{type.callno}}</b></span>
    				</span>
+      </div>
+      <ul class="author">
+        <li>
+          <label>著者：</label>
+          <span>{{type.author}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </li>
+        <li>
+          <label>出版日期：</label>
+          <span>{{type.publishtime}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </li>
+        <li>
+          <label>出版社：</label>
+          <span>{{type.publisher}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </li>
+        <li class="r">
+          <label>可借复本：</label>
+          <span>{{information.ano[i]}}&nbsp;&nbsp;&nbsp;</span>
+        </li>
+        <li class="r">
+          <label>馆藏复本：</label>
+          <span>{{type.inno}}</span>
+        </li>
+      </ul>
     </div>
-    <ul class="author">
-      <li>
-        <label>著者：</label>
-        <span>{{type.author}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      </li>
-      <li>
-        <label>出版日期：</label>
-        <span>{{type.publishtime}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      </li>
-      <li>
-        <label>出版社：</label>
-        <span>{{type.publisher}}&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      </li>
-      <li class="r">
-        <label>可借复本：</label>
-        <span>{{information.ano[i]}}&nbsp;&nbsp;&nbsp;</span>
-      </li>
-      <li class="r">
-        <label>馆藏复本：</label>
-        <span>{{type.inno}}</span>
-      </li>
-    </ul>
   </div>
 </main>
 

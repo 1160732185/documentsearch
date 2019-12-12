@@ -1,13 +1,7 @@
-.book-detail .right table th {
-  background: #ffc376;
-  text-align: center;
-  padding: 3px;
-  border-left: 1px solid #fbdcb3;
-  border-right: 1px solid #fbdcb3;
-}
-.book-detail .right table {
-  width: 100%;
-  border-bottom: 1px solid #fbdcb3;
+body {
+  color: #353535;
+  font-size: 14px;
+  font-family: 'Microsoft Yahei',Helvetica,Arial,'Lucida Grande',sans-serif;
 }
 div {
   display: block;
@@ -53,92 +47,30 @@ option {
 .visually-hidden{
   display: none !important;
 }
-.layout-3col__full{
-  box-sizing: border-box;
-}
-.tabs{
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-}
-.tabs li.is-active a {
-  background: #fff;
-  padding: 9px 15px;
-  color: #0e6aad;
-  border: 2px solid #6aa3cc;
-  border-bottom: 0;
-}
-.tabs li a {
+.book-detail .right {
+  max-width: 780px;
+  width: 100%;
   float: left;
-  background: #0e6aad;
-  color: #fff;
-  padding: 10px 15px;
-  line-height: 1;
-  margin-right: 3px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
-.content{
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
+.book-detail .right .title {
+  border-bottom: 2px solid #0e6aad;
+  margin-bottom: 15px;
 }
-
-.book-item{
-  border: 2px solid #0e6aad;
+.book-detail .right .title .sqh {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
 }
-#ecust-lib-form-book-query {
-  border: 2px solid #6aa3cc;
-  border-radius: 5px;
-  padding: 20px 15px;
-  margin-bottom: 30px;
-  background: #efefef;
-  clear: both;
+.book-detail .right .item {
+  margin-bottom: 5px;
+  line-height: 1.8;
 }
-#ecust-lib-form-book-query .form-item {
+.book-detail .right .item label {
   float: left;
-  margin-right: 10px;
+  width: 75px;
+  font-weight: bold;
 }
-#ecust-lib-form-book-query .form-item select {
-  height: 26px;
-  line-height: 26px;
+.qr-code-item{
+  margin-left:5px;
+  font-size: 10px;
 }
-#ecust-lib-form-book-query .form-item label {
-  height: 26px;
-  line-height: 26px;
-  display: none;
-}
-#ecust-lib-form-book-query .form-item input {
-  background: #fff;
-  height: 26px;
-  line-height: 26px;
-  padding-left: 5px;
-}
-#ecust-lib-form-book-query .form-submit {
-  background: #0e6aad;
-  color: #fff;
-  text-align: center;
-  border-radius: 4px;
-  height: 26px;
-  line-height: 26px;
-  padding: 0 5px;
-}
-#ecust-lib-form-book-query .item-list {
-  clear: both;
-  padding: 10px 0 0;
-}
-#ecust-lib-form-book-query .item-list li {
-  display: inline;
-  margin: 0 10px 0 0;
-}
-#ecust-lib-form-book-query .item-list li a {
-  text-decoration: underline;
-}
-#qrcode{
-  width: 180px;
-  height: 180px;
-  margin: 10px auto;
-}
-
