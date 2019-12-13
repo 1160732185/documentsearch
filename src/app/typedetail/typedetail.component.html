@@ -33,6 +33,10 @@
           <label>在馆情况</label>
           <span>{{information.ano[0]}}</span>
         </div>
+        <div *ngIf="conn[0]!=null" class="item">
+          <label>电子资源</label>
+          <span><a href="http://www.apabi.com/hdlgdx/?pid=book.detail&metaid=m.20071122-m057-w017-054&cult=CN">{{this.conn[0]}}</a></span>
+        </div>
       </div>
       <div class="bottom">
         <h2>馆藏地址</h2>

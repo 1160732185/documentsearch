@@ -17,6 +17,7 @@ export class TypedetailComponent implements OnInit {
   type: Type;
   information: Information;
   comment: string;
+  conn: string[];
   comments: string[];
   ngOnInit(): void {
     this.type = new Type();
@@ -34,10 +35,16 @@ export class TypedetailComponent implements OnInit {
         console.log('评论' + this.comments);
       }
     );
+    this.actionService.sconn(id).subscribe(
+      (data) => {
+        this.conn = data;
+        console.log('链接' + this.conn);
+      }
+    );
   }
   addcomment() {
     console.log(this.comment);
-    this.actionService.addcomment(this.comment, this.type.isbn).subscribe((data)=>{
+    this.actionService.addcomment(this.comment, this.type.isbn).subscribe((data) => {
       console.log(data);
     });
   }

@@ -58,4 +58,9 @@ export class ActionService {
     const url = `${this.doactionUrl}/comment/${id}`;
     return this.http.get<string[]>(url);
   }
+
+  sconn(id: string): Observable<string[]> {
+    const url = `${this.doactionUrl}/conn/${id}`;
+    return this.http.get<string[]>(url);
+  }
 }
